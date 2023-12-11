@@ -1,17 +1,19 @@
-// iconCard.dart
 import 'package:flutter/material.dart';
-import 'overlayScreen.dart'; // Import the necessary widgets
+import 'overlayScreen.dart';
 
 class IconCard extends StatelessWidget {
   final String text;
   final IconData icon;
   final Widget camera;
 
-  const IconCard({
+  final VoidCallback onPressed;
+
+   const IconCard({
     Key? key,
     required this.text,
     required this.icon,
     required this.camera,
+    required this.onPressed,
   }) : super(key: key);
 
   void _showOverlay(BuildContext context) {
