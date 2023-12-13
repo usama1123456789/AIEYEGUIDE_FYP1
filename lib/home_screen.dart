@@ -1,7 +1,8 @@
-// home_screen.dart
 import 'package:flutter/material.dart';
 import 'iconCard.dart';
-import 'overlayScreen.dart'; // Import the necessary widgets
+import 'overlayScreen.dart';
+import 'feedback.dart';
+// Import the necessary widgets
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
@@ -17,12 +18,7 @@ class HomeScreen extends StatelessWidget {
               AppBar(
                 title: const Text('AI EYE GUIDE'),
                 backgroundColor: Colors.red,
-                actions: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.menu),
-                  ),
-                ],
+
               ),
               Container(
                 height: 1,
@@ -38,19 +34,20 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Row(
+               Row(
                 children: [
                   Expanded(
                     child: IconCard(
                       icon: Icons.credit_card,
-                      text: "Document Reading ", camera: CameraControl(),
+                      text: "Document Reading ",
+                      camera: CameraControl(), onPressed: () {  },
                     ),
                   ),
                   Expanded(
                     child: IconCard(
                       text: "Object Detection",
                       icon: Icons.data_object,
-                      camera: CameraControl(), // Provide the camera widget
+                      camera: CameraControl(), onPressed: () {  }, // Provide the camera widget
                     ),
                   ),
                 ],
@@ -58,22 +55,28 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Row(
+              Row(
                 children: [
-                  Expanded(
+                   Expanded(
                     child: IconCard(
                       text: "Currency Detection",
                       icon: Icons.currency_exchange_outlined,
-                      camera: CameraControl(), // Provide the camera widget
+                      camera: CameraControl(), onPressed: () {  }, // Provide the camera widget
                     ),
                   ),
                   Expanded(
                     child: IconCard(
-                      text: "FeedBack",
+                      text: "Feedback",
                       icon: Icons.feedback,
-                      camera: CameraControl(), // Provide the camera widget
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FeedbackScreen()),
+                        );
+                      },
+                      camera: Container(), // Provide a dummy widget since Feedback doesn't need a camera
                     ),
-                  ),
+                  ), // Added missing closing parenthesis
                 ],
               ),
             ],

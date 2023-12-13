@@ -1,5 +1,3 @@
-
-// overlayScreen.dart
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +8,19 @@ class CameraControl extends StatefulWidget {
   _CameraControlState createState() => _CameraControlState();
 }
 
-class _CameraControlState extends State<CameraControl> {
+class
+
+_CameraControlState
+
+    extends
+
+    State<CameraControl> {
   late CameraController _cameraController;
+  bool _isCameraInitialized = false;
 
   @override
+
+
   void initState() {
     super.initState();
     _initializeCamera();
@@ -21,6 +28,8 @@ class _CameraControlState extends State<CameraControl> {
 
   Future<void> _initializeCamera() async {
     final cameras = await availableCameras();
+
+
     final firstCamera = cameras.first;
 
     _cameraController = CameraController(
@@ -30,9 +39,9 @@ class _CameraControlState extends State<CameraControl> {
 
     try {
       await _cameraController.initialize();
-      if (mounted) {
-        setState(() {});
-      }
+      setState(() {
+        _isCameraInitialized = true;
+      });
     } catch (e) {
       print('Error initializing camera: $e');
     }
@@ -40,37 +49,33 @@ class _CameraControlState extends State<CameraControl> {
 
   @override
   void dispose() {
-    _cameraController?.dispose();
+    _cameraController.dispose();
     super.dispose();
   }
 
-
   Widget _buildCameraPreview() {
-    if (_cameraController != null && _cameraController.value.isInitialized) {
-      return Expanded(
-        child: AspectRatio(
-          aspectRatio: _cameraController.value.aspectRatio,
-          child: CameraPreview(_cameraController),
-        ),
-      );
-    } else {
+    if (!_isCameraInitialized) {
       return const CircularProgressIndicator();
     }
-  }
 
+    return Expanded(
+      child: AspectRatio(
+        aspectRatio: _cameraController.value.aspectRatio,
+        child: CameraPreview(_cameraController),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _buildCameraPreview(),
+            _isCameraInitialized ? _buildCameraPreview() : CircularProgressIndicator(),
             const SizedBox(height: 16),
-
           ],
         ),
       ),
