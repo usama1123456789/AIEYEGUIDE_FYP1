@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: IconCard(
                       icon: Icons.credit_card,
-                      text: "Document Reading ",
+                      text: "Document Reading Change",
                       camera: CameraControl(), onPressed: () {  },
                     ),
                   ),
