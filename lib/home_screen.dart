@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: IconCard(
-                      text: "Object Detection",
+                      text: "Object Detection Change",
                       icon: Icons.data_object,
                       camera: CameraControl(), onPressed: () {  }, // Provide the camera widget
                     ),
