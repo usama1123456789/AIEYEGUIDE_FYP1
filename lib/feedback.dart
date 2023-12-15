@@ -33,9 +33,7 @@ class VoiceRecordingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Add your functionality when the button is pressed
-        // For example, you can navigate to another screen or show a dialog
-        // You can add voice recording logic here
+
       },
       tooltip: 'Start Recording',
       child: const Icon(Icons.mic, size: 36),

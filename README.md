@@ -1,4 +1,4 @@
-# my_app
+# AI_EYE_GUIDE
 
 A new Flutter project.
 

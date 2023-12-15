@@ -1,6 +1,6 @@
 {
-    "name": "my_app",
-    "short_name": "my_app",
+    "name": "AI_EYE_GUIDE",
+    "short_name": "AI_EYE_GUIDE",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

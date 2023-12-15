@@ -1,18 +1,18 @@
-#ifndef FLUTTER_MY_APPLICATION_H_
-#define FLUTTER_MY_APPLICATION_H_
+#ifndef FLUTTER_AI_EYE_GUIDELICATION_H_
+#define FLUTTER_AI_EYE_GUIDELICATION_H_
 
 #include <gtk/gtk.h>
 
-G_DECLARE_FINAL_TYPE(MyApplication, my_application, MY, APPLICATION,
+G_DECLARE_FINAL_TYPE(MyApplication, AI_EYE_GUIDElication, MY, APPLICATION,
                      GtkApplication)
 
 /**
- * my_application_new:
+ * AI_EYE_GUIDElication_new:
  *
  * Creates a new Flutter-based application.
  *
  * Returns: a new #MyApplication.
  */
-MyApplication* my_application_new();
+MyApplication* AI_EYE_GUIDElication_new();
 
-#endif  // FLUTTER_MY_APPLICATION_H_
+#endif  // FLUTTER_AI_EYE_GUIDELICATION_H_

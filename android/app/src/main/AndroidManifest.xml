@@ -5,7 +5,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <!-- ... other manifest elements ... -->
     <application
-        android:label="my_app"
+        android:label="AI_EYE_GUIDE"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

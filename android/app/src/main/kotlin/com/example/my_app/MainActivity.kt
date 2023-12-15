@@ -1,4 +1,4 @@
-package com.example.my_app
+package com.example.AI_EYE_GUIDE
 
 import io.flutter.embedding.android.FlutterActivity
 
