@@ -52,9 +52,10 @@ class IconCard extends StatelessWidget {
               value: text,
               label: text,
               child: ElevatedButton.icon(
-                onPressed: () => _showOverlay(context, text == "Feedback"), // Pass a bool condition
+                onPressed: () => _showOverlay(context, text == "Feedback"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
+                  elevation: 5,
                   foregroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
