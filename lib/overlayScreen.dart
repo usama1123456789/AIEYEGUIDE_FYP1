@@ -8,19 +8,11 @@ class CameraControl extends StatefulWidget {
   _CameraControlState createState() => _CameraControlState();
 }
 
-class
-
-_CameraControlState
-
-    extends
-
-    State<CameraControl> {
+class _CameraControlState extends State<CameraControl> {
   late CameraController _cameraController;
   bool _isCameraInitialized = false;
 
   @override
-
-
   void initState() {
     super.initState();
     _initializeCamera();
@@ -28,7 +20,6 @@ _CameraControlState
 
   Future<void> _initializeCamera() async {
     final cameras = await availableCameras();
-
 
     final firstCamera = cameras.first;
 
@@ -74,7 +65,9 @@ _CameraControlState
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _isCameraInitialized ? _buildCameraPreview() : CircularProgressIndicator(),
+            _isCameraInitialized
+                ? _buildCameraPreview()
+                : const CircularProgressIndicator(),
             const SizedBox(height: 16),
           ],
         ),

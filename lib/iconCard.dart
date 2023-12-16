@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'overlayScreen.dart';
+
+// Import the FeedbackOverlayScreen
+import 'feedback.dart';
+
 
 class IconCard extends StatelessWidget {
   final String text;
@@ -8,7 +11,7 @@ class IconCard extends StatelessWidget {
 
   final VoidCallback onPressed;
 
-   const IconCard({
+  const IconCard({
     Key? key,
     required this.text,
     required this.icon,
@@ -16,11 +19,18 @@ class IconCard extends StatelessWidget {
     required this.onPressed,
   }) : super(key: key);
 
-  void _showOverlay(BuildContext context) {
+  // Update the _showOverlay method to accept a bool parameter
+  void _showOverlay(BuildContext context, bool isFeedback) {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
-      builder: (ctx) => camera,
+      builder: (ctx) {
+        if (isFeedback) {
+          return const FeedbackOverlayScreen();
+        } else {
+          return camera;
+        }
+      },
     );
   }
 
@@ -42,7 +52,7 @@ class IconCard extends StatelessWidget {
               value: text,
               label: text,
               child: ElevatedButton.icon(
-                onPressed: () => _showOverlay(context),
+                onPressed: () => _showOverlay(context, text == "Feedback"), // Pass a bool condition
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.red,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'iconCard.dart';
 import 'overlayScreen.dart';
 import 'feedback.dart';
-// Import the necessary widgets
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
@@ -40,15 +40,15 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: IconCard(
                       icon: Icons.credit_card,
-                      text: "Document Reading Change",
-                      camera: CameraControl(), onPressed: () {  },
+                      text: "Document Reading ",
+                      camera: const  CameraControl(), onPressed: () {  },
                     ),
                   ),
                   Expanded(
                     child: IconCard(
-                      text: "Object Detection Change",
+                      text: "Object Detection ",
                       icon: Icons.data_object,
-                      camera: CameraControl(), onPressed: () {  }, // Provide the camera widget
+                      camera: const CameraControl(), onPressed: () {  }, // Provide the camera widget
                     ),
                   ),
                 ],
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                     child: IconCard(
                       text: "Currency Detection",
                       icon: Icons.currency_exchange_outlined,
-                      camera: CameraControl(), onPressed: () {  }, // Provide the camera widget
+                      camera: const  CameraControl(), onPressed: () {  }, // Provide the camera widget
                     ),
                   ),
                   Expanded(
@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const FeedbackScreen()),
+                          MaterialPageRoute(builder: (context) => const FeedbackOverlayScreen()),
                         );
                       },
                       camera: Container(), // Provide a dummy widget since Feedback doesn't need a camera
