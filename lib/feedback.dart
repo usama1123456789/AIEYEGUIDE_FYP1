@@ -15,12 +15,11 @@ class FeedbackOverlayScreen extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 20),
-          // Add your feedback form widgets here
-          // For example, you can use TextFields, Buttons, etc.
+
           ElevatedButton(
             onPressed: () {
-              // Add logic to handle feedback submission
-              Navigator.pop(context); // Close the overlay after submitting
+
+              Navigator.pop(context);
             },
             child: const Text('Submit Feedback'),
           ),
