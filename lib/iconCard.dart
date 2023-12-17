@@ -72,7 +72,7 @@ class IconCard extends StatelessWidget {
                 ),
                 label: Text(
                   text,
-                  style: const TextStyle(fontSize: 14.6),
+                  style: const TextStyle(fontSize: 13.9),
                 ),
               ),
             ),

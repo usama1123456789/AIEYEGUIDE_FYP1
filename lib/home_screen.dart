@@ -3,23 +3,34 @@ import 'iconCard.dart';
 import 'overlayScreen.dart';
 import 'feedback.dart';
 
-
+var kColorScheme =ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 100));
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-         debugShowCheckedModeBanner: false   ,
+      theme: ThemeData().copyWith(useMaterial3:true,
+          colorScheme: kColorScheme,
+
+      appBarTheme:const AppBarTheme().copyWith(
+        backgroundColor: kColorScheme.onPrimaryContainer,
+        foregroundColor: kColorScheme.onPrimaryContainer
+
+      ),
+      cardTheme: const CardTheme().copyWith(
+        color: kColorScheme.secondaryContainer,
+        margin: const EdgeInsets.all(16)
+      )),
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               AppBar(
-                title: const Text('AI EYE GUIDE'),
+                title: const Text('AI EYE GUIDE',style: TextStyle(color: Colors.white),),
                 backgroundColor: Colors.red,
-
               ),
               Container(
                 height: 1,
@@ -35,20 +46,22 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-               Row(
+              Row(
                 children: [
                   Expanded(
                     child: IconCard(
                       icon: Icons.credit_card,
                       text: "Document Reading ",
-                      camera: const  CameraControl(), onPressed: () {  },
+                      camera: const CameraControl(),
+                      onPressed: () {},
                     ),
                   ),
                   Expanded(
                     child: IconCard(
                       text: "Object Detection ",
                       icon: Icons.data_object,
-                      camera: const CameraControl(), onPressed: () {  }, // Provide the camera widget
+                      camera: const CameraControl(),
+                      onPressed: () {}, // Provide the camera widget
                     ),
                   ),
                 ],
@@ -58,11 +71,12 @@ class HomeScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                   Expanded(
+                  Expanded(
                     child: IconCard(
                       text: "Currency Detection",
                       icon: Icons.currency_exchange_outlined,
-                      camera: const  CameraControl(), onPressed: () {  }, // Provide the camera widget
+                      camera: const CameraControl(),
+                      onPressed: () {}, // Provide the camera widget
                     ),
                   ),
                   Expanded(
@@ -72,10 +86,13 @@ class HomeScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const FeedbackOverlayScreen()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const FeedbackOverlayScreen()),
                         );
                       },
-                      camera: Container(), // Provide a dummy widget since Feedback doesn't need a camera
+                      camera:
+                          Container(), // Provide a dummy widget since Feedback doesn't need a camera
                     ),
                   ), // Added missing closing parenthesis
                 ],
