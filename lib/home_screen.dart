@@ -6,15 +6,30 @@ import 'feedback.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({Key? key}):super(key: key);
-  var kColorScheme =ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 96, 59, 181));
+  var kColorScheme =ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 181));
+  var kDarkColorScheme= ColorScheme.fromSeed(
+      brightness: Brightness.dark ,
+      seedColor: const Color.fromARGB(128, 101, 164, 59));
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+
+      darkTheme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: kDarkColorScheme,
+          elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(backgroundColor: kDarkColorScheme.onPrimaryContainer))
+
+    ),
       theme: ThemeData().copyWith(useMaterial3:true,
           colorScheme: kColorScheme,
 
-
       ),
+
+
+
+      themeMode: ThemeMode.system  ,
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
