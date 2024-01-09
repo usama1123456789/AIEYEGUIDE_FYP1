@@ -41,7 +41,7 @@ class FeedbackOverlayScreen extends StatelessWidget {
 
                 Text(
                   'Feedback',
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 20),
                 ),
               ],
             ),

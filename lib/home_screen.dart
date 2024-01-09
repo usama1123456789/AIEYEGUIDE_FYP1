@@ -100,9 +100,9 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       camera:
-                          Container(), // Provide a dummy widget since Feedback doesn't need a camera
+                          Container(),
                     ),
-                  ), // Added missing closing parenthesis
+                  ),
                 ],
               ),
             ],

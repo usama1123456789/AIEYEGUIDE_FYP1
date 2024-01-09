@@ -67,7 +67,7 @@ class _CameraControlState extends State<CameraControl> {
           children: [
             _isCameraInitialized
                 ? _buildCameraPreview()
-                : const CircularProgressIndicator(),
+                : const Center(child: CircularProgressIndicator()),
             const SizedBox(height: 16),
           ],
         ),

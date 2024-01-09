@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 // Import the FeedbackOverlayScreen
 import 'feedback.dart';
 
-
 class IconCard extends StatelessWidget {
   final String text;
   final IconData icon;
@@ -19,7 +18,6 @@ class IconCard extends StatelessWidget {
     required this.onPressed,
   }) : super(key: key);
 
-  // Update the _showOverlay method to accept a bool parameter
   void _showOverlay(BuildContext context, bool isFeedback) {
     showModalBottomSheet(
       isScrollControlled: true,
@@ -66,13 +64,13 @@ class IconCard extends StatelessWidget {
                   children: [
                     Icon(
                       icon,
-                      size: 80,
+                      size: 70,
                     ),
                   ],
                 ),
                 label: Text(
                   text,
-                  style: const TextStyle(fontSize: 13.9),
+                  style: const TextStyle(fontSize: 12.9),
                 ),
               ),
             ),
