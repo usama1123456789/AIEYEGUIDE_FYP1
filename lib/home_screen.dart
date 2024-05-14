@@ -6,10 +6,11 @@ import 'feedback.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({Key? key}):super(key: key);
-  var kColorScheme =ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 181));
+  var kColorScheme =ColorScheme.fromSeed(seedColor: const Color.fromARGB(
+      255, 115, 115, 18));
   var kDarkColorScheme= ColorScheme.fromSeed(
       brightness: Brightness.dark ,
-      seedColor: const Color.fromARGB(128, 101, 164, 59));
+      seedColor: const Color.fromARGB(128, 115, 215, 47));
   
   @override
   Widget build(BuildContext context) {
