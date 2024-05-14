@@ -69,6 +69,24 @@ class _CameraControlState extends State<CameraControl> {
                 ? _buildCameraPreview()
                 : const Center(child: CircularProgressIndicator()),
             const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Add logic to capture photo
+                  },
+                  child: const Icon(Icons.camera_alt),
+                ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add logic to toggle camera (front/back)
+                  },
+                  child: const Icon(Icons.switch_camera),
+                ),
+              ],
+            ),
           ],
         ),
       ),
