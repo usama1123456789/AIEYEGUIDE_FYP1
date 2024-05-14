@@ -36,7 +36,7 @@ class _FeedbackOverlayScreenState extends State<FeedbackOverlayScreen> {
       await _microphone.closeAudioStream();
       // Here you can handle the recorded audio data as needed
     } catch (e) {
-      print('Error stopping recording: $e');
+      print('error stopping Recording: $e');
     }
   }
 
@@ -48,7 +48,7 @@ class _FeedbackOverlayScreenState extends State<FeedbackOverlayScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Provide your feedback here!',
+            'provide your feedback here!',
             style: TextStyle(fontSize: 25),
           ),
           const SizedBox(height: 50),
