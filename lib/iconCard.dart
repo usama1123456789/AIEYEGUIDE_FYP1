@@ -64,7 +64,7 @@ class IconCard extends StatelessWidget {
                   children: [
                     Icon(
                       icon,
-                      size: 70,
+                      size: 50,
                     ),
                   ],
                 ),
@@ -76,7 +76,7 @@ class IconCard extends StatelessWidget {
             ),
           ),
           Container(
-            width: 180,
+            width: 190,
             height: 4,
             color: Colors.amber,
           ),
